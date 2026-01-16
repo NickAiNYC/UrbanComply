@@ -76,6 +76,8 @@ CREATE INDEX idx_submissions_status ON submissions(status);
 -- ============================================
 -- Agent Activity Logs Table
 -- ============================================
+-- Note: Uses ON DELETE SET NULL because agent logs should be preserved even if building is deleted
+-- This allows for historical analysis and audit trails
 CREATE TABLE agent_logs (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     agent_name VARCHAR(50) NOT NULL, -- pilot_hunter, process_engineer, etc.
@@ -207,7 +209,12 @@ CREATE TRIGGER update_automation_scripts_updated_at BEFORE UPDATE ON automation_
 -- Sample Data (Optional - for testing)
 -- ============================================
 
--- Insert a sample building
+-- Note: Sample data uses realistic NYC BIN format (10 digits) but these are fictional test values
+-- Replace with actual building data when deploying to production
+-- NYC BINs are issued by the Department of Buildings and can be verified at:
+-- https://a810-bisweb.nyc.gov/bisweb/bispi00.jsp
+
+-- Insert a sample building (fictional BIN for testing only)
 INSERT INTO buildings (bin, address, borough, owner_name, owner_email, building_type, gross_floor_area, year_built)
 VALUES 
     ('1234567890', '123 Main Street, New York, NY 10001', 'Manhattan', 'Sample Owner LLC', 'owner@example.com', 'Office', 50000, 1985);
