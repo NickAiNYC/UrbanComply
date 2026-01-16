@@ -9,6 +9,7 @@ import unittest
 import tempfile
 import json
 import os
+import shutil
 from pathlib import Path
 import sys
 
@@ -29,7 +30,6 @@ class TestUtilityDataValidator(unittest.TestCase):
     
     def tearDown(self):
         """Clean up test files."""
-        import shutil
         if os.path.exists(self.temp_dir):
             shutil.rmtree(self.temp_dir)
     
@@ -337,7 +337,6 @@ class TestMissingMonths(unittest.TestCase):
     
     def tearDown(self):
         """Clean up test files."""
-        import shutil
         if os.path.exists(self.temp_dir):
             shutil.rmtree(self.temp_dir)
     
