@@ -53,6 +53,7 @@ validation.log
 reports/
 *.json
 validation_report.json
+test_*_report.json
 !tests/fixtures/*.json
 
 # Test coverage
@@ -84,6 +85,7 @@ Desktop.ini
 data/
 *.csv
 !tests/fixtures/*.csv
+!tests/sample_*.csv
 
 # Docker
 .dockerignore
