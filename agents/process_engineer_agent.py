@@ -502,7 +502,7 @@ class ProcessEngineerAgent(BaseAgent):
         return [
             {
                 'error': 'Missing Months',
-                'cause': 'Utility provider didn\'t provide all 12 months',
+                'cause': "Utility provider didn't provide all 12 months",
                 'solution': 'Contact utility provider for missing data'
             },
             {
@@ -512,7 +512,7 @@ class ProcessEngineerAgent(BaseAgent):
             },
             {
                 'error': 'BIN Mismatch',
-                'cause': 'Building ID in Portfolio Manager doesn\'t match DOB records',
+                'cause': "Building ID in Portfolio Manager doesn't match DOB records",
                 'solution': 'Verify BIN at NYC DOB BIS website'
             },
             {

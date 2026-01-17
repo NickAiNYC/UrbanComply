@@ -192,9 +192,9 @@ Examples:
     validate_parser.add_argument('input_file', help='Path to utility data CSV')
     validate_parser.add_argument('-o', '--output', help='Output report path')
     validate_parser.add_argument('--min-value', type=float, default=0.0,
-                                help='Minimum acceptable value')
+                                help='Minimum acceptable utility value for validation (default: 0.0)')
     validate_parser.add_argument('--max-value', type=float, default=1e9,
-                                help='Maximum acceptable value')
+                                help='Maximum acceptable utility value for validation (default: 1e9)')
     
     # Checklist command
     checklist_parser = subparsers.add_parser('checklist', help='Generate compliance checklist')
